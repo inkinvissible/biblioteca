@@ -39,3 +39,13 @@ nav.addEventListener('keydown', e => {
     }
   }
 });
+
+// Obtener los elementos SVG y el contenedor de notificaciones
+const notificationIcon = document.getElementById('notificationIcon');
+const notificationsContainer = document.getElementById('notificationsContainer');
+
+// Agregar un evento click al ícono de notificaciones
+notificationIcon.addEventListener('click', () => {
+  // Toggle para mostrar u ocultar el centro de notificaciones
+  notificationsContainer.classList.toggle('hidden');
+});
