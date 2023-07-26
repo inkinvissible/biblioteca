@@ -15,6 +15,20 @@ function navigateTo(page) {
     switch (page) {
       case 'inicio':
         contentDiv.innerHTML = '<div class="absolute w-[75%] left-[12%] top-36"><img src="imagenes/biblioteca.png"  alt="Biblioteca en Grande con libros"> <img src="imagenes/sanjose.png" class="mt-3"  alt="San José en Grande con libros"></div>';
+        const inicioContent = '<div class="absolute w-[75%] left-[12%] top-36"><img src="imagenes/biblioteca.png"  alt="Biblioteca en Grande con libros"> <img src="imagenes/sanjose.png" class="mt-3"  alt="San José en Grande con libros"></div>';
+        contentDiv.innerHTML = inicioContent;
+        // Simulamos la carga de imágenes utilizando eventos de carga
+        const images = contentDiv.getElementsByTagName('img');
+        let loadedImages = 0;
+        for (let i = 0; i < images.length; i++) {
+          images[i].onload = () => {
+            loadedImages++;
+            if (loadedImages === images.length) {
+              // Ocultar el loader una vez que todas las imágenes están cargadas
+              loader.style.display = 'none';
+            }
+          };
+        }
         break;
       case 'disponibilidad':
         contentDiv.innerHTML = '<form class="w-[50%] absolute left-[25%] rounded bg-white p-7">            <h2 class="mb-3 text-black text-xl font-bold">Consultar Stock</h2>            <div>                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Nombre del libro</label>                <div class="relative mt-2 rounded-md shadow-sm">                    <input type="text" name="price" id="price"                        class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"                        placeholder="Nombre del libro">                </div>            </div>            <br>            <button class="learn-more" type="submit">                <span class="circle" aria-hidden="true">                    <span class="icon arrow"></span>                </span>                <span class="button-text">Buscar</span>            </button>        </form>';
