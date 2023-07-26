@@ -123,48 +123,49 @@
     <!-- Paginas estaticas -->
     <div id="content" class="p-4">
         <!-- El contenido se cargará aquí -->
-        <form class="w-[50%] absolute left-[25%] rounded bg-white p-7">
+        <form id="formCargarLibro" class="w-[50%] absolute left-[25%] rounded bg-white p-7" onsubmit="event.preventDefault(); consultarDisponibilidad();">
             <h2 class="mb-3 text-black font-bold text-xl">Cargar Libros</h2>
             <div>
-                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Nombre del libro</label>
+                <label for="nombre_libro" class="block text-sm font-medium leading-6 text-gray-900">Nombre del libro</label>
                 <div class="relative mt-2 rounded-md shadow-sm">
-                    <input type="text" name="price" id="price"
+                    <input type="text" name="nombre_libro" id="nombre_libro"
                         class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="Nombre del libro">
                 </div>
+                
             </div>
             <br>
             <div>
-                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Editorial</label>
+                <label for="editorial" class="block text-sm font-medium leading-6 text-gray-900">Editorial</label>
                 <div class="relative mt-2 rounded-md shadow-sm">
-                    <input type="text" name="price" id="price"
+                    <input type="text" name="editorial" id="editorial"
                         class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                        placeholder="Editorial">
+                        placeholder="editorial">
                 </div>
             </div>
             <br>
             <div>
-                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">ISBN</label>
+                <label for="isbn" class="block text-sm font-medium leading-6 text-gray-900">ISBN</label>
                 <div class="relative mt-2 rounded-md shadow-sm">
-                    <input type="text" name="price" id="price"
+                    <input type="text" name="isbn" id="isbn"
                         class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="ISBN">
                 </div>
             </div>
             <br>
             <div>
-                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Autor</label>
+                <label for="autor" class="block text-sm font-medium leading-6 text-gray-900">Autor</label>
                 <div class="relative mt-2 rounded-md shadow-sm">
-                    <input type="text" name="price" id="price"
+                    <input type="text" name="autor" id="autor"
                         class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="Autor">
                 </div>
             </div>
             <br>
             <div>
-                <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Disponibilidad</label>
+                <label for="disponibilidad" class="block text-sm font-medium leading-6 text-gray-900">Disponibilidad</label>
                 <div class="relative mt-2 rounded-md shadow-sm">
-                    <input type="text" name="price" id="price"
+                    <input type="text" name="disponibilidad" id="disponibilidad"
                         class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         placeholder="Disponibilidad">
                 </div>
@@ -179,6 +180,7 @@
             </button>
 
         </form>
+        <div id="resultadoConsulta"></div>
     </div>
 
     <script>
